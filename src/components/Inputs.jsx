@@ -1,5 +1,4 @@
 import { useContext } from "react";
-import Select from 'react-select'
 import UseDataContext from "../store/DataContext.jsx";
 import Header from "./Header.jsx";
 import Result from "./Result.jsx";
@@ -37,6 +36,8 @@ export default function Inputs() {
             datas={
               dataCtx.order < 2
                 ? dataCtx.warning[2]
+                : dataCtx.isLoading
+                ? dataCtx.warning[1]
                 : dataCtx.error
                 ? dataCtx.warning[0]
                 : dataCtx.brands
